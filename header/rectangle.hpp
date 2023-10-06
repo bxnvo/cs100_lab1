@@ -3,12 +3,12 @@
 
 class Rectangle {
     private:
-        int width;
-        int height;
+        double width;
+        double height;
     public:
-        void set_width(int w);
-        void set_height(int h);
-        int area();
+        void set_width(double w);
+        void set_height(double h);
+        double area();
 };
 
 #endif /* RECTANGLE_HPP */

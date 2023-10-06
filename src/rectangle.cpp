@@ -1,13 +1,13 @@
 #include "../header/rectangle.hpp"
 
-void Rectangle::set_width(int w) {
+void Rectangle::set_width(double w) {
     this->width = w;
 }
 
-void Rectangle::set_height(int h) {
+void Rectangle::set_height(double h) {
     this->height = h;
 }
 
-int Rectangle::area() {
+double Rectangle::area() {
     return this->width * this->height;
 }
