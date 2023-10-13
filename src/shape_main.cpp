@@ -13,6 +13,17 @@ int main()
     double area;
     double height;
     stringstream ss;
+    bool invalid;
+    Triangle tri;
+    double base;
+    Rectangle rect;
+    double width;
+    
+
+
+    do {
+
+        invalid = false;
 
     cout << "Enter t to select a triangle or r for a rectangle: ";
 
@@ -20,17 +31,19 @@ int main()
 
     if (shape == 't')
     {
-        Triangle tri;
-        double base;
         cout << "Enter the base: ";
         cin.ignore();
+        input.clear();
+        ss.clear();
+        ss.str("");
         getline(cin, input);
         ss.str(input);
         ss >> base;
         if (!ss.eof() || base < 0)
         {
             cout << "Invalid output" << endl;
-            return 0;
+            invalid = true;
+            continue;
         }
         else
         {
@@ -46,7 +59,8 @@ int main()
         if (!ss.eof() || height < 0)
         {
             cout << "Invalid output" << endl;
-            return 0;
+            invalid = true;
+            continue;
         }
         else
         {
@@ -60,18 +74,20 @@ int main()
 
     else if (shape == 'r')
     {
-        Rectangle rect;
-        double width;
 
         cout << "Enter the width: ";
         cin.ignore();
+        input.clear();
+        ss.clear();
+        ss.str("");
         getline(cin, input);
         ss.str(input);
         ss >> width;
         if (!ss.eof() || width < 0)
         {
             cout << "Invalid output" << endl;
-            return 0;
+            invalid = true;
+            continue;
         }
         else
         {
@@ -87,7 +103,8 @@ int main()
         if (!ss.eof() || height < 0)
         {
             cout << "Invalid output" << endl;
-            return 0;
+            invalid = true;
+            continue;
         }
         else
         {
@@ -102,7 +119,10 @@ int main()
     else
     {
         cout << "Invalid output" << endl;
+        invalid = true;
     }
+
+    } while (invalid);
 
     return 0;
 }
